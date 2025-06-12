@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - TicketBooking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Hệ thống đặt vé</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Trang chủ</a>
+                <a href="index.html#movies">Vé xem phim</a>
+                <a href="index.html#buses">Vé xe</a>
+                <a href="index.html#news">Tin tức</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="payment-container">
+        <div class="payment-content">
+            <div class="booking-summary">
+                <h2>Thông tin đặt vé</h2>
+                <div id="bookingDetails">
+                    <!-- Booking details will be loaded here -->
+                </div>
+                <div class="selected-seats">
+                    <h3>Ghế đã chọn:</h3>
+                    <div id="selectedSeatsList"></div>
+                </div>
+                <div id="foodBeverageItems" class="mt-4">
+                    <h3>Đồ ăn & Thức uống</h3>
+                    <div id="foodBeverageList">
+                        <!-- Food and beverage items will be loaded here -->
+                    </div>
+                </div>
+                <div class="price-breakdown mt-4">
+                    <h3>Chi tiết thanh toán</h3>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Tiền vé:</span>
+                        <span id="ticketPrice">0đ</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Đồ ăn & Thức uống:</span>
+                        <span id="foodBeveragePrice">0đ</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-bold">Tổng cộng:</span>
+                        <span id="totalPrice" class="fw-bold">0đ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-form">
+                <h2>Thông tin thanh toán</h2>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="fullName">Họ và tên</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h3>Phương thức thanh toán</h3>
+                        <div class="method-options">
+                            <label class="method-option">
+                                <input type="radio" name="paymentMethod" value="vnpay" checked>
+                                <img src="img/A16.png" alt="VNPay">
+                                <span>VNPay</span>
+                            </label>
+                            <label class="method-option">
+                                <input type="radio" name="paymentMethod" value="momo">
+                                <img src="img/A15.png" alt="MoMo">
+                                <span>MoMo</span>
+                            </label>
+                            <label class="method-option">
+                                <input type="radio" name="paymentMethod" value="zalopay">
+                                <img src="img/A14.png" alt="ZaloPay">
+                                <span>ZaloPay</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn payment-btn">Thanh toán</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- QR Code Payment Modal -->
+    <div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="qrCodeModalLabel">Quét mã QR để thanh toán</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="qr-code-container mb-3">
+                        <img id="qrCodeImage" src="" alt="QR Code" class="img-fluid">
+                    </div>
+                    <div class="payment-info">
+                        <p class="mb-2">Số tiền cần thanh toán:</p>
+                        <h4 id="modalTotalAmount" class="text-primary mb-3">0đ</h4>
+                        <p class="text-muted small">Vui lòng quét mã QR bằng ứng dụng thanh toán của bạn</p>
+                    </div>
+                    <div class="payment-timer mt-3">
+                        <p class="mb-2">Mã QR sẽ hết hạn sau:</p>
+                        <div id="paymentTimer" class="h4 text-danger">15:00</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="confirmPaymentBtn">Xác nhận đã thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html> 

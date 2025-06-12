@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Ghế - TicketBooking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/seat-selection.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Hệ thống đặt vé</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Trang chủ</a>
+                <a href="index.html#movies">Vé xem phim</a>
+                <a href="index.html#buses">Vé xe</a>
+                <a href="index.html#news">Tin tức</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="seat-selection-container">
+        <div class="booking-info">
+            <h2>Thông tin đặt vé</h2>
+            <div id="bookingDetails">
+                <!-- Booking details will be loaded here -->
+            </div>
+        </div>
+
+        <div class="seat-selection">
+            <h2>Chọn ghế</h2>
+            <div class="screen">Màn hình</div>
+            
+            <div class="seat-map">
+                <div class="seat-legend">
+                    <div class="legend-item">
+                        <div class="seat available"></div>
+                        <span>Ghế trống</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat selected"></div>
+                        <span>Đã chọn</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat occupied"></div>
+                        <span>Đã đặt</span>
+                    </div>
+                </div>
+
+                <div class="seats-container" id="seatsContainer">
+                    <!-- Seats will be generated here -->
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <div class="selected-seats">
+                    <h3>Ghế đã chọn:</h3>
+                    <div id="selectedSeatsList"></div>
+                </div>
+                <div class="total-price">
+                    <h3>Tổng tiền:</h3>
+                    <span id="totalPrice">0đ</span>
+                </div>
+                <button id="proceedBtn" class="btn" disabled>Tiếp tục</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/seat-selection.js"></script>
+</body>
+</html> 

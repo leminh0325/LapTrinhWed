@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vé của tôi - Hệ Thống Đặt Vé</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Hệ Thống Đặt Vé</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#bus-tickets">Vé xe</a></li>
+                <li><a href="index.html#movie-tickets">Vé phim</a></li>
+                <li><a href="tickets.html" class="active">Vé của tôi</a></li>
+                <li><a href="support.html">Hỗ trợ</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Đăng nhập</a>
+                <a href="login.html#register" class="register-btn">Đăng ký</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tickets-section">
+            <div class="container">
+                <h1>Vé của tôi</h1>
+                
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-type">Loại vé:</label>
+                        <select id="filter-type">
+                            <option value="all">Tất cả</option>
+                            <option value="movie">Vé phim</option>
+                            <option value="bus">Vé xe</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-status">Trạng thái:</label>
+                        <select id="filter-status">
+                            <option value="all">Tất cả</option>
+                            <option value="confirmed">Đã xác nhận</option>
+                            <option value="pending">Đang chờ</option>
+                            <option value="cancelled">Đã hủy</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-date">Ngày:</label>
+                        <input type="date" id="filter-date">
+                    </div>
+                </div>
+
+                <div class="tickets-container">
+                    <!-- Tickets will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về chúng tôi</h3>
+                    <p>Hệ thống đặt vé trực tuyến hàng đầu Việt Nam, cung cấp dịch vụ đặt vé xe và vé phim chất lượng cao.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-phone"></i> 1900 1234</p>
+                    <p><i class="fas fa-envelope"></i> support@datve.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, TP. Hà Nội</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hệ Thống Đặt Vé. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/tickets.js"></script>
+</body>
+</html> 
